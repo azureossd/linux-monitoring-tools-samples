@@ -96,3 +96,53 @@ drwxr-xr-x 94 root   root    4096 Sep 17 21:18 ..
 -rwxrwxrwx  1 nobody nogroup 7085 Sep 17 21:45 master.zip
 drwxrwxrwx  2 nobody nogroup    0 Sep 17 21:45 .
 root@6cc2a4520825:/home#
+
+```
+
+### Compile Code
+
+You'll need to install GCC if it's not currently on your system.  Use the following command to install the components.
+
+`apt-get update && apt-get install build-essential -y`
+
+Once installed, check if GCC is installed.
+
+```bash
+
+root@6cc2a4520825:/home# which gcc
+/usr/bin/gcc
+root@6cc2a4520825:/home# gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 6.3.0-18+deb9u1' --with-bugurl=file:///usr/share/doc/gcc-6/README.Bugs --enable-languages=c,ada,c++,ja
+va,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-6 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --wi
+thout-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=y
+es --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --disa
+ble-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-6-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/
+jvm/java-1.5.0-gcj-6-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-6-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar
+--with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune
+=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 6.3.0 20170516 (Debian 6.3.0-18+deb9u1)
+root@6cc2a4520825:/home#
+
+```
+
+Now compile the code using the following commands.  You can name them whatever you like.
+
+```bash
+root@6cc2a4520825:/home/linux-monitoring-tools-samples-master# gcc zombie.c -o mynewzombie
+root@6cc2a4520825:/home/linux-monitoring-tools-samples-master# ls -ltra
+total 41
+-rwxrwxrwx 1 nobody nogroup  193 Sep 17 21:09 zombie.c
+-rwxrwxrwx 1 nobody nogroup 8744 Sep 17 21:09 newzombie
+-rwxrwxrwx 1 nobody nogroup   57 Sep 17 21:09 dproc.c
+-rwxrwxrwx 1 nobody nogroup 8688 Sep 17 21:09 dproc
+-rwxrwxrwx 1 nobody nogroup 1713 Sep 17 21:09 README.md
+drwxrwxrwx 2 nobody nogroup    0 Sep 17 21:45 ..
+drwxrwxrwx 2 nobody nogroup    0 Sep 17 22:01 .
+-rwxrwxrwx 1 nobody nogroup 8744 Sep 17 22:01 mynewzombie
+
+```
