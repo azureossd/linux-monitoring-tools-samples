@@ -29,7 +29,7 @@ KiB Swap:  1910780 total,  1141648 free,   769132 used.   772276 avail Mem
  1752 root      30  10       0      0      0 Z  0.0  0.0   0:00.00 newzombie
 ```
 
-## D State
+### D State
 
 Similar to the zombie process but filter in top using "S=D".
 ```bash
@@ -47,3 +47,52 @@ KiB Swap:  1910780 total,  1139524 free,   771256 used.   773128 avail Mem
  1770 root      30  10    4032    588    524 D  0.0  0.0   0:00.00 dproc
 ```
 
+### Usage
+
+You can use the following command to download and unzip the contents or you can just a git clone.
+
+```bash
+
+wget -c https://github.com/azureossd/linux-monitoring-tools-samples/archive/refs/heads/master.zip && unzip master.zip
+
+```
+
+The contents will be extracted as shown below.
+
+```bash
+
+root@6cc2a4520825:/home#wget -c https://github.com/azureossd/linux-monitoring-tools-samples/archive/refs/heads/master.zip && unzip master.zip
+--2021-09-17 21:45:53--  https://github.com/azureossd/linux-monitoring-tools-samples/archive/refs/heads/master.zip
+Resolving github.com (github.com)... 192.30.255.112
+Connecting to github.com (github.com)|192.30.255.112|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://codeload.github.com/azureossd/linux-monitoring-tools-samples/zip/refs/heads/master [following]
+--2021-09-17 21:45:54--  https://codeload.github.com/azureossd/linux-monitoring-tools-samples/zip/refs/heads/master
+Resolving codeload.github.com (codeload.github.com)... 192.30.255.121
+Connecting to codeload.github.com (codeload.github.com)|192.30.255.121|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 7085 (6.9K) [application/zip]
+Saving to: 'master.zip'
+
+master.zip          100%[===================>]   6.92K  --.-KB/s    in 0s
+
+2021-09-17 21:45:54 (75.5 MB/s) - 'master.zip' saved [7085/7085]
+
+Archive:  master.zip
+70959167a7d8681516ca2c671756ea32d90eb74a
+   creating: linux-monitoring-tools-samples-master/
+  inflating: linux-monitoring-tools-samples-master/README.md
+  inflating: linux-monitoring-tools-samples-master/dproc
+  inflating: linux-monitoring-tools-samples-master/dproc.c
+  inflating: linux-monitoring-tools-samples-master/newzombie
+  inflating: linux-monitoring-tools-samples-master/zombie.c
+root@6cc2a4520825:/home# ls -ltra
+total 12
+drwxrwxrwx  2 nobody nogroup    0 Apr 30 00:06 ASP.NET
+drwxrwxrwx  2 nobody nogroup    0 Apr 30 00:06 site
+drwxrwxrwx  2 nobody nogroup    0 Sep 17 21:09 linux-monitoring-tools-samples-master
+drwxrwxrwx  2 nobody nogroup    0 Sep 17 21:18 LogFiles
+drwxr-xr-x 94 root   root    4096 Sep 17 21:18 ..
+-rwxrwxrwx  1 nobody nogroup 7085 Sep 17 21:45 master.zip
+drwxrwxrwx  2 nobody nogroup    0 Sep 17 21:45 .
+root@6cc2a4520825:/home#
